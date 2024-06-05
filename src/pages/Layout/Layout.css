@@ -1,0 +1,18 @@
+.mainContainer{
+    display: flex;
+    flex-direction: row;
+}
+
+
+.navContent{
+    height: 100vh;
+    width: 20%;
+    overflow-y: scroll;
+    padding: 2rem 3rem;
+    background-color: rgb(19, 19, 19);
+}
+
+.mainContent{
+    width: 80%;
+    /* background-image: linear-gradient(90deg, rgb(19, 19, 19), whitesmoke); */
+}

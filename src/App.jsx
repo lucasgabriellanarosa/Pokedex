@@ -1,25 +1,20 @@
-import { useEffect } from 'react'
 import './App.css'
-import { useState } from 'react'
-import axios from "axios";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Home } from './pages/Home/Home';
+import { Layout } from './pages/Layout/Layout';
+import { Pokemon } from './pages/Pokemon/Pokemon';
 
 function App() {
-
-  const [pokemonList, setPokemonList] = useState([])
-  
-  useEffect(() => {
-    axios.get(`https://pokeapi.co/api/v2/pokemon?limit=151`).then((res) => setPokemonList(res.data.results))
-  }, [])
-  
-
   return (
-    <div>
-      <ul>
-        {pokemonList.map((pokemon, index) => (
-          <li key={index}>{pokemon.name}</li>
-        ))}
-      </ul>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/Pokedex/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path='/Pokedex/:pokemonName' element={<Pokemon />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   )
 }
 
