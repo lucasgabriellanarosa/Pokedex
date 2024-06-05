@@ -1,7 +1,8 @@
 import React from 'react'
+import { SyncLoader } from 'react-spinners'
 
 export const Loading = () => {
   return (
-    <div>Loading...</div>
+    <SyncLoader color="#000" />
   )
 }
