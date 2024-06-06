@@ -1,16 +1,14 @@
 .pokemonContainer{
     display: flex;
-    gap: 10rem;
-    justify-content: center;
-    padding: 5rem 0;
+    justify-content: space-around;
+    padding: 5rem 3rem;
     background-color: rgba(0, 0, 0, .75);
     width: 70%;
     color: #13D19F;
-    height: fit-content;
 }
 
 .pokemonTitle{
-    font-size: 2.5rem;
+    font-size: 2.5vw;
 }
 .pokemonImg{
     width: 10vw;
@@ -23,13 +21,15 @@
 }
 
 .type{
-    font-size: 1.5rem;
+    font-size: 1.3rem;
+    padding: .5vw 0;
     border-radius: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 50%;
     color: black;
+    min-width: 110px;
 }
 
 .type:hover{
@@ -135,6 +135,44 @@
 }
 
 .baseStatsContainer li{
-    font-size: 1.25rem;
+    font-size: 1.5vw;
 }
 
+
+
+@media screen and (max-width: 1220px) {
+    .pokemonContainer{
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .pokemonImg{
+        width: 15vw;
+    }
+    .type{
+        width: 25%;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .pokemonTitle{
+        font-size: 1.75rem;
+    }
+    .baseStatsContainer li{
+        font-size: 1rem;
+    }
+    .pokemonImg{
+        width: 8rem;
+    }
+}
+
+@media screen and (max-width:520px) {
+    audio{
+        max-width: 180px;
+    }
+}
+
+@media screen and (max-width:340px) {
+    audio{
+        width: 150px;
+    }
+}

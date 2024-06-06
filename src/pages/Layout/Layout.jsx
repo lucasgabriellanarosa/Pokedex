@@ -27,17 +27,17 @@ export const Layout = () => {
   return (
     <div className='mainContainer'>
         <nav className='navContent'>
-        <h1 className='appLogoTitle'>Pokédex</h1>
-        <input ref={inputQuery} type="text" placeholder='Search for a pokémon...' className='searchPokemonInput' value={query} onChange={updateQuery}/>
-        <ul>
-            {
-              pokemonList.filter(pokemon => pokemon.name.toLowerCase().includes(query.toLowerCase())).map((filteredPokemon, index) => (
-                <li key={index}>
-                  <Link to={`/Pokedex/${filteredPokemon.name}`} className='pokemonLi'>{filteredPokemon.name}</Link>
-                </li>
-              ))
-            }
-        </ul>
+          <h1 className='appLogoTitle'>Pokédex</h1>
+          <input ref={inputQuery} type="text" placeholder='Pokémon' className='searchPokemonInput' value={query} onChange={updateQuery}/>
+          <ul className='pokemonSearchList'>
+              {
+                pokemonList.filter(pokemon => pokemon.name.toLowerCase().includes(query.toLowerCase())).map((filteredPokemon, index) => (
+                  <li key={index}>
+                    <Link to={`/Pokedex/${filteredPokemon.name}`} className='pokemonLi'>{filteredPokemon.name}</Link>
+                  </li>
+                ))
+              }
+          </ul>
         </nav>
 
         <main className='mainContent'>

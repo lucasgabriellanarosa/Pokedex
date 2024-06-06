@@ -2,8 +2,6 @@
     display: flex;
     flex-direction: row;
 }
-
-
 .navContent{
     height: 100vh;
     width: 20%;
@@ -16,22 +14,23 @@
 }
 
 .appLogoTitle{
-    font-size: 3rem;
+    font-size: 3vw;
     color: #13D19F;     
 }
 
 .pokemonLi{
     color: #13D19F;
-    font-size: 1.5rem;
+    font-size: 1.8vw;
     text-transform: capitalize;
     text-decoration: none;
 }
 
 .searchPokemonInput{
-    font-size: 1rem;
+    font-size: 1.5vw;
     outline: none;
     border-radius: 5px;
     padding: .3rem .75rem;
+    min-width: 87px;
 }
 
 .mainContent{
@@ -40,4 +39,41 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+@media screen and (max-width:768px) {
+    html{
+        overflow-y: scroll;
+    }
+    .appLogoTitle{
+        font-size: 2rem;
+    }
+    .mainContainer{
+        flex-direction: column;
+    }
+
+    .navContent{
+        width: 100%;
+        height: fit-content;
+    }
+    .searchPokemonInput{
+        font-size: 1rem;
+    }
+    .pokemonSearchList{
+        height: 30vh;
+        z-index: 1;
+        overflow-y: scroll;
+        border: 1px solid #13D19F;
+        padding: 0 1rem;
+    }
+    .pokemonLi{
+        font-size: 1rem;   
+    }
+    .mainContent{
+        z-index: -1;
+        width: 100%;
+        min-height: 100vh;
+        padding: 3rem 0;
+        background-image: radial-gradient(red, #0f644d, black);
+    }
 }
